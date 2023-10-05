@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  Articles
+<%= link_to "New article", new_article_path, class: 'btn btn-primary' %>
+</h1>
+
+<div class="row row-cols-2 row-cols-lg-5 g-3 g-lg-4">
+  <% @articles.each do |article| %>
+  <div class="col-lg-3">
+    <div class="p-4 border bg-light d-block">
+      <%= render partial: 'article_card', locals: { article: article } %>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
