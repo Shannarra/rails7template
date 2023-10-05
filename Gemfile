@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.1"
+ruby "3.2.2"
 
 # Bundle Rails
 gem "rails"
@@ -15,7 +15,7 @@ gem "sprockets-rails"
 gem "pg"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma"
+gem "puma", '~> 5.6.7'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
