@@ -1,4 +1,4 @@
-# Rails 7 Template application
+# Rails 7 Template application [![Ruby](https://github.com/Shannarra/rails7template/actions/workflows/ruby.yml/badge.svg)](https://github.com/Shannarra/rails7template/actions/workflows/ruby.yml)
 
 This app demonstrates Rails 7 with PostgreSQL, import maps, turbo, stimulus, bootstrap and hotwire, all running in Docker.
 
