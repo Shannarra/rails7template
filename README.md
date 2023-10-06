@@ -28,11 +28,10 @@ Docker Compose version v2.10.2
 ```
 
 ## Initial setup
+
+You can just run the [startup.sh](https://github.com/Shannarra/rails7template/edit/master/startup.sh) script:
 ```
-cp .env.example .env
-# optional: Change TIMEZONE to your local timezone if you want to use non-UTC time. For example 'CET', 'EET'.
-docker compose build
-docker compose run --rm web bin/rails db:setup
+sh ./startup.sh
 ```
 
 ## Running the Rails app
