@@ -56,6 +56,14 @@ docker compose run --rm web bin/rails c
 docker compose run --rm web bin/rspec
 ```
 
+## Time localization
+If you want to change the timezone to your specific locale you can do this very simply, just change the TIMEZONE variable in the .env file:
+
+```
+# TODO: change to CET, EET or wherever you live
+TIMEZONE=UTC
+```
+
 ## Updating gems
 ```
 docker compose run --rm web bundle
