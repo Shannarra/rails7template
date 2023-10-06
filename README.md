@@ -82,7 +82,7 @@ This app can be hosted wherever Ruby is supported and PostgreSQL databases can b
 
 #### Render
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ryanwi/rails7-on-docker)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=[https://github.com/Shannarra/rails7template](https://github.com/Shannarra/rails7template))
 
 NOTE: You will need to generate a production secret with `bin/rails secret` and set it as the `SECRET_KEY_BASE` environment variable.
 
