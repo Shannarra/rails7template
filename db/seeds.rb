@@ -8,7 +8,7 @@
       supplemental: true,
     ).join("\n")
   )
-  
+   
   rand(1..10).times do
     article.comments.create!(
       content: Faker::Lorem.paragraph(
