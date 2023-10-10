@@ -17,7 +17,7 @@ RSpec.describe "Articles", type: :request do
   }
 
   describe "GET /index" do
-    it "renders a successful response" do  
+    it "renders a successful response" do   
       create(:article)
       get articles_url
       expect(response).to be_successful
