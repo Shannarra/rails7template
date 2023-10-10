@@ -62,6 +62,7 @@ jobs:
 
       - name: Create database
         run: |
+          cp .env.example .env
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
