@@ -6,7 +6,6 @@
     content: Faker::Lorem.paragraphs(
       number: rand(5..50),
       supplemental: true,
-      #random_sentences_to_add: rand(25..100)
     ).join("\n")
   )
 
