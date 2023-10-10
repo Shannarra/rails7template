@@ -13,7 +13,7 @@ RSpec.describe Article, type: :model do
   describe 'with invalid attributes' do
     context 'when empty' do
       let(:empty_article) { create(:article, title: '', content: '') }
-    
+
       it 'does not create a new article' do
         expect {
           empty_article
@@ -23,7 +23,7 @@ RSpec.describe Article, type: :model do
 
     context 'when violating min-max boundaries' do
       let(:invalid_article) { create(:article, title: 'a'*101, content: 'a'*100_001) }
-    
+
       it 'does not create a new article' do
         expect {
           invalid_article
