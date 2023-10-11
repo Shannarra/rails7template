@@ -22,10 +22,7 @@ RSpec.describe Article, type: :model do
     end
 
     context 'when violating min-max boundaries' do
-      let(:invalid_article) {
-        create(:article,
-               title: 'a'*(1 + Article::MAX_TITLE_LENGTH),
-               content: 'a'*(1 + Article::MAX_CONTENT_LENGTH)) }
+      let(:invalid_article) { create(:article, title: 'a' * 101, content: 'a' * 100_001) }
 
       it 'does not create a new article' do
         expect {
