@@ -25,7 +25,9 @@ RSpec.describe Article, type: :model do
       let(:invalid_article) {
         create(:article,
                title: 'a' * (1 +  Article::MAX_TITLE_LENGTH),
-               content: 'a'* (1 + Article::MAX_CONTENT_LENGTH) }
+               content: 'a'* (1 + Article::MAX_CONTENT_LENGTH)
+              )
+      }
 
       it 'does not create a new article' do
         expect {
