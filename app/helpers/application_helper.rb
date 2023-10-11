@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def application_timezone
-    ENV.try(:[], 'TIMEZONE') || 'UTC'
+    ENV.try(:fetch, 'TIMEZONE', 'UTC')
   end
 
   def localized_creation_time(article)
