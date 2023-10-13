@@ -80,7 +80,7 @@ if [ $USES_DEVISE -eq 1 ]; then
                 <a class='btn btn-outline-primary mr-2' href='#'>Login</a> \\
                 <a class='btn btn-outline-success' href='#'>Become member</a> \\
               <%- else %> \\
-                <a class="btn btn-outline-danger" href="<%= destroy_user_session_path %>">Log out</a>
+                <a class='btn btn-outline-danger' href='<%= destroy_user_session_path %>'>Log out</a> \\
               <% end %> \\
             </form>
 }" app/views/layouts/application.html.erb 
