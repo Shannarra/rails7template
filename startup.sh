@@ -80,8 +80,7 @@ setup_device() {
 
     if [ $? -eq 0 ]; then
         echo "[STARTUP] Setting up database"
-        docker compose run --rm web bin/rails db:create
-        docker compose run --rm web rails db:migrate
+        docker compose run --rm web bin/rails db:setup
 
         echo "[STARTUP] Devise $DEVISE_NAME successfully created!"
     else
