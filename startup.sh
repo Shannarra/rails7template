@@ -16,8 +16,8 @@ while [ $# -gt 0 ]; do
       DEVISE_NAME=$1
       shift # past value
       ;;
-    --default)
-      DEFAULT=YES
+    -r|--run) # Run when everything has been built
+      RUN_WHEN_DONE=1
       shift # past argument
       ;;
     -*|--*|*)
@@ -27,14 +27,7 @@ while [ $# -gt 0 ]; do
   esac
 done
 
-chmod u+x -R ./bin/*
-
-cp .env.example .env
-
-docker compose build
-
-if [ $USES_DEVISE -eq 1 ]; then
-
+setup_device() {
     echo "[STARTUP] Setting up Devise gem..."
 
     sed -i "65 i \\
@@ -85,7 +78,25 @@ if [ $USES_DEVISE -eq 1 ]; then
             </form>
 }" app/views/layouts/application.html.erb 
 
-else
-    echo "[STARTUP] Setting up database"
-    docker compose run --rm web bin/rails db:setup
-fi
+}
+
+setup_application() {
+    chmod u+x -R ./bin/*
+
+    cp .env.example .env
+
+    docker compose build
+
+    if [ $USES_DEVISE -eq 1 ]; then
+        setup_device
+    else
+        echo "[STARTUP] Setting up database"
+        docker compose run --rm web bin/rails db:setup
+    fi
+
+    if [ $RUN_WHEN_DONE -eq 1 ]; then
+        dockker compose up
+    fi
+}
+
+setup_application
