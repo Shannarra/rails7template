@@ -43,7 +43,7 @@ This will bootstrap a Rails 7 application that has some sample data but misses a
 If you want to have built-in authentication with Devise you can do the following:
 
 <details>
-<summary> <h3>Devise setup</h3> </summary>
+<summary> <h3>Devise setup</h3> (optional)</summary>
 Setting the application up to work with Devise is very straightforward, just a single command:
 
 ```console
