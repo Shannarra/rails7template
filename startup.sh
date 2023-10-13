@@ -95,7 +95,7 @@ setup_application() {
     fi
 
     if [ $RUN_WHEN_DONE -eq 1 ]; then
-        dockker compose up
+        docker compose up
     fi
 }
 
