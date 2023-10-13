@@ -81,7 +81,7 @@ setup_device() {
     if [ $? -eq 0 ]; then
         echo "[STARTUP] Setting up database"
         # doing db:setup here doesn't work
-        docker compose run --rm web bin/rails db:create
+        docker compose run --rm web rails db:create
         docker compose run --rm web rails db:migrate
         docker compose run --rm web rails db:seed
 
@@ -120,7 +120,7 @@ setup_application() {
         setup_device
     else
         echo "[STARTUP] Setting up database"
-        docker compose run --rm web bin/rails db:setup
+        docker compose run --rm web rails db:setup
     fi
 
     if [ $RUN_WHEN_DONE -eq 1 ]; then
