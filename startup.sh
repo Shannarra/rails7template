@@ -77,8 +77,8 @@ if [ $USES_DEVISE -eq 1 ]; then
     s/<device-buttons>//g
     a\            <form class=''> \\
               <%- if !current_user.present? %> \\
-                <a class='btn btn-outline-primary mr-2' href='#'>Login</a> \\
-                <a class='btn btn-outline-success' href='#'>Become member</a> \\
+                <a class='btn btn-outline-primary mr-2' href='<%= new_user_session_path %>'>Login</a> \\
+                <a class='btn btn-outline-success' href='<%= new_user_registration_path %>'>Become member</a> \\
               <%- else %> \\
                 <a class='btn btn-outline-danger' href='<%= destroy_user_session_path %>'>Log out</a> \\
               <% end %> \\
