@@ -77,8 +77,8 @@ if [ $USES_DEVISE -eq 1 ]; then
     s/<device-buttons>//g
     a\            <form class=''> \\
               <%- if !current_user.present? %> \\
-                <%= link_to 'Login', new_user_registration_path, class='btn btn-outline-primary mr-2' %> \\
-                <%= link_to 'Become member', new_user_registration_path, class='btn btn-outline-success' %> \\
+                <%= link_to 'Login', new_user_registration_path, class: 'btn btn-outline-primary mr-2' %> \\
+                <%= link_to 'Become member', new_user_registration_path, class: 'btn btn-outline-success' %> \\
               <%- else %> \\
                 <%= link_to 'Log out', destroy_user_session_path, class: 'btn btn-outline-danger', data: { turbo_method: :delete }%> \\
               <% end %> \\
