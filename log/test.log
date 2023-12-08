@@ -15790,3 +15790,5 @@ Completed 302 Found in 5ms (ActiveRecord: 1.6ms | Allocations: 1728)
   Rendered articles/_article.html.erb (Duration: 5.0ms | Allocations: 2509)
   Rendered articles/show.html.erb (Duration: 5.5ms | Allocations: 2809)
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
