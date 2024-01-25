@@ -1,50 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rails 7 template</title>
+    <title>manageR</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div class="container-flouid">
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="/">
-            <h3>Your Logo</h3>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Things </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Courses</a>
-              </li>
 
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Blog</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Event</a>
-              </li>
-            </ul>
-          </div>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <% if current_user %>
+          <%= render 'partials/sidebar' %>
+        <% end %>
+        <div class="col py-3">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
         </div>
-      </nav>
-    </div>
-    <div class="container">
-      <p class="notice"><%= notice %></p> 
-      <p class="alert"><%= alert %></p> 
-      <%= yield %>
+      </div>
     </div>
   </body>
 </html>
