@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="flex-nowrap">
+    <div class="col col-md-8 p-5 mx-auto">
+      <h2 class='d-flex justify-content-center'>  Edit Profile</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="row">
+        <div class="form-group col-md pt-5">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, class: 'form-control col-md-4', autofocus: true, autocomplete: "name" %>
+        </div>
+        
+        <div class="form-group col-md pt-5">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, class: 'form-control col-md-4', autofocus: true, autocomplete: "email" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md pt-4">
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
+          <% if @minimum_password_length %>
+          <em class='text-muted'><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+        </div>
+
+        <div class="form-group col-md pt-4">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md pt-4">
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, class: 'form-control', autocomplete: "current-password" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="actions form-group pt-4 col-md-12">
+          <%= f.submit "Update", class: 'btn btn-success w-100' %>
+        </div>
+      </div>
+      <% end %>
+
+      <h3>Cancel my account</h3>
+
+      <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></div>
+
+      <%= link_to "Back", :back %>
+
+    </div>
+  </div>
+</div>
