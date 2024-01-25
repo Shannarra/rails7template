@@ -7,4 +7,7 @@ import "@rails/actiontext"
 import "popper"
 import "bootstrap"
 
+//= require jquery
+//= require jquery_ujs
+
 console.log('Hello World from application.js');
