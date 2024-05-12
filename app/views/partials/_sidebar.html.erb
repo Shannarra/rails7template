@@ -1,0 +1,57 @@
+<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+  <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <span class="fs-5 d-none d-sm-inline">Menu</span>
+    </a>
+    <ul class="nav flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start text-success" id="menu">
+      <li class="nav-item">
+        <%= link_to(root_url, { class: "nav-link align-middle px-0" }) do %>
+          <%= fa_icon('home') %> <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+        <% end %>
+      </li>
+      <li>
+        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+          <%= fa_icon("tachometer") %> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+      </li>
+      <li>
+        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+          <%= fa_icon("paperclip") %> <span class="ms-1 d-none d-sm-inline">Upcoming exams</span> </a>
+      </li>
+      <li>
+        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+          <%=fa_icon("users") %> <span class="ms-1 d-none d-sm-inline">Classes</span>
+        </a>
+        <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+          <li class="w-100">
+            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Class</span> 1</a>
+          </li>
+          <li>
+            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Class</span> 2</a>
+          </li>
+          <li>
+            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Class</span> 3</a>
+          </li>
+          <li>
+            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Class</span> 4</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown pb-4">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= image_tag(current_user&.image || "https://github.com/mdo.png", {alt: 'image', width: '30', height: '30', class: 'rounded-circle'}) %>
+        <span class="d-none d-sm-inline mx-1"><%= current_user&.name || "Username" %></span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><%=link_to("New ...",    root_url, { class: "dropdown-item" }) %></li>
+        <li><%=link_to("Edit profile", edit_user_registration_path, { class: "dropdown-item" }) %></li>
+        <li><%=link_to("My profile", my_profile_path, { class: "dropdown-item" }) %></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
+      </ul>
+    </div>
+  </div>
+</div>
