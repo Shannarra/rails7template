@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       authenticate_user!
     end
   end
-  
+
   # GET /users/new
   def new
     @user = User.new
@@ -76,7 +76,7 @@ class UsersController < ApplicationController
       respond_to do |format|
         format.html { redirect_to users_url, notice: 'User does not exist.' }
         format.json { head :no_content, status: :not_found }
-      end      
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
