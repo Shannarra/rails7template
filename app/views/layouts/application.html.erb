@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>manageR</title>
+    <title>rails7template</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,9 +15,6 @@
 
     <div class="container-fluid">
       <div class="row flex-nowrap">
-        <% if current_user %>
-          <%= render 'partials/sidebar' %>
-        <% end %>
         <div class="col py-3">
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>

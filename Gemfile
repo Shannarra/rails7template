@@ -62,8 +62,6 @@ gem "rubocop-rails"
 # Javascript runtime using Node. Useful for Bootstrap.
 gem 'execjs'
 
-gem 'devise'
-
 gem 'font-awesome-rails', '~> 4.7.0'
 
 group :development, :test do

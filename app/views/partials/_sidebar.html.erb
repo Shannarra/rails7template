@@ -38,20 +38,5 @@
       </li>
     </ul>
     <hr>
-    <div class="dropdown pb-4">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= image_tag(current_user&.image || "https://github.com/mdo.png", {alt: 'image', width: '30', height: '30', class: 'rounded-circle'}) %>
-        <span class="d-none d-sm-inline mx-1"><%= current_user&.name || "Username" %></span>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-        <li><%=link_to("New ...",    root_url, { class: "dropdown-item" }) %></li>
-        <li><%=link_to("Edit profile", edit_user_registration_path, { class: "dropdown-item" }) %></li>
-        <li><%=link_to("My profile", my_profile_path, { class: "dropdown-item" }) %></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
-      </ul>
-    </div>
   </div>
 </div>
