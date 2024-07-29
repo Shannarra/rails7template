@@ -45,12 +45,9 @@
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
         <li><%=link_to("New ...",    root_url, { class: "dropdown-item" }) %></li>
-        <li><%=link_to("Edit profile", edit_user_registration_path, { class: "dropdown-item" }) %></li>
-        <li><%=link_to("My profile", my_profile_path, { class: "dropdown-item" }) %></li>
         <li>
           <hr class="dropdown-divider">
         </li>
-        <li><%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
       </ul>
     </div>
   </div>
