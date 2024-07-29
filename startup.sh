@@ -42,18 +42,15 @@ done
 
 
 setup_application() {
-    chmod u+x -R ./bin/*
 
     cp .env.example .env
 
     docker compose build
 
-    if [ $USES_DEVISE -eq 1 ]; then
-        setup_device
-    else
-        echo "[STARTUP] Setting up database"
-        docker compose run --rm web rails db:setup
-    fi
+    echo "[STARTUP] Setting up database"
+    docker compose run --rm web rails db:setup
+
+    chmod u+x -R ./bin/*
 
     if [ $RUN_WHEN_DONE -eq 1 ]; then
         docker compose up
