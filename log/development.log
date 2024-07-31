@@ -1723,3 +1723,13 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 6283ms (Views: 5145.3ms | ActiveRecord: 0.0ms | Allocations: 1765734)
 
 
+Started GET "/" for 172.18.0.1 at 2024-07-31 11:47:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 139)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 30330)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 31573)
+
+
