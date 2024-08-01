@@ -123,6 +123,9 @@ setup_application() {
         docker compose run --rm web rails db:setup
     fi
 
+		chmod u+x -R ./bin/*
+
+
     if [ $RUN_WHEN_DONE -eq 1 ]; then
         docker compose up
     fi

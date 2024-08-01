@@ -52,6 +52,27 @@ sh startup.sh --devise user
 
 In this case, the application will be created with authentication mechanism for a model called "User".  
 The given model will be created, migrated and integrated with the application upon startup.
+
+<h4>Debugging</h4>
+If you have already ran the startup.sh script in your project for a devise, and try to run it again with the SAME devise, you <b><i>WILL</i></b> encounter the following error:
+
+```console
+PG::DuplicateColumn: ERROR:  column "email" of relation "[DEVISE NAME]" already exists (PG::DuplicateColumn)
+```
+
+Followed by an UI error saying that 
+```console
+You have 1 pending migration:
+
+db/migrate/YYYYMMDDHHMMSS_add_devise_to_[DEVISE NAME].rb
+```
+
+To resolve this issue, you need to either:
+- drop and remove the entire container, and run the `startup` script again  
+or
+- manually remove the new migration causing the issue and re-run the script with a changed devise name.
+
+---
 </details>
 
 ### Extras
